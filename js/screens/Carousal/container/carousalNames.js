@@ -2,7 +2,8 @@ import {connect} from "react-redux";
 import CarousalNames from "../components/names";
 import { fetchCharDetails, fetchPlanetsDetails, fetchStarShipsDetails } from '../actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, props) => {
+    
     return {
         allCharactersList: state.CarousalReducer.allCharactersList,
         activeSlideIndex: state.CarousalReducer.activeSlideIndex,

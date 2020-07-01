@@ -12,7 +12,8 @@ import {
   FETCH_PLANETS_DETAILS_FAILURE,
   FETCH_STARS_SHIPS_DETAILS,
   FETCH_STARS_SHIPS_DETAILS_SUCCESS,
-  FETCH_STARS_SHIPS_DETAILS_FAILURE
+  FETCH_STARS_SHIPS_DETAILS_FAILURE,
+  STORE_CURRENT_SLIDE_INDEX
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -142,6 +143,11 @@ const CarousalReducer = (state = initialState, action) => {
     case FETCH_STARS_SHIPS_DETAILS_FAILURE:
       return {
         ...state
+      }
+    case STORE_CURRENT_SLIDE_INDEX:
+      return {
+        ...state,
+        activeSlideIndex: action.index
       }
     default:
       return state;

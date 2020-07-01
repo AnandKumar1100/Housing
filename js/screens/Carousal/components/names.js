@@ -1,15 +1,28 @@
 'Use Strict';
 
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Component } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native'
 import * as CONSTANTS from './constants'
 import { Styles } from './styles';
 
-export default class CarousalName extends PureComponent {
+export default class CarousalName extends Component {
 
     constructor(props) {
         super(props)
         this.id = null
+    }
+
+    shouldComponentUpdate(nextprops) {
+        if (nextprops.activeSlideIndex === nextprops.slideIndex) {
+            return true
+        }
+        else return false
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.activeSlideIndex !== this.props.activeSlideIndex && !this.props.allPlanetsList[this.props.episodeId]) {
+            this.callAPI()
+        }
     }
 
     componentDidMount() {

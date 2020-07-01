@@ -6,6 +6,15 @@ export const Styles = StyleSheet.create({
     fill: {
         flex: 1
     },
+    listStyles: {
+        paddingTop: 12,
+        paddingBottom: 16
+    },
+    loaderContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     slideContainer: {
         flex: 1,
         width: windowWidth,
@@ -16,7 +25,8 @@ export const Styles = StyleSheet.create({
     },
     titleText: {
         color: '#101217',
-        fontSize: 16
+        fontSize: 16,
+        paddingTop: 12
     },
     releaseDateContainer: {
         flexDirection: 'row',
@@ -32,7 +42,8 @@ export const Styles = StyleSheet.create({
         paddingLeft: 24,
         flexDirection: 'row',
         flex: 1,
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        paddingBottom: 16
     },
     charNameBoxContainer: {
         marginVertical: 8,

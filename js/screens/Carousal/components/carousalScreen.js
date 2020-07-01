@@ -1,7 +1,7 @@
 'Use Strict';
 
 import React, { Component } from 'react';
-import { View, FlatList, SafeAreaView, ActivityIndicator, Dimensions } from 'react-native'
+import { View, FlatList, SafeAreaView, ActivityIndicator, Dimensions, Text } from 'react-native'
 import CarousalSlide from './carousalSlide'
 import { Styles } from "./styles";
 
@@ -22,10 +22,6 @@ export default class CarousalScreen extends Component {
     return (<CarousalSlide movieDetails={item} slideIndex={index}/>);
   }
 
-  renderEmptyScreen = () => {
-    return (<View />);
-  }
-
   itemKeyExtractor = (item, index) => String(item.episode_id)
 
   onMomentumScrollEnd = event => {
@@ -41,16 +37,15 @@ export default class CarousalScreen extends Component {
   render() {
     const { isLoading, moviesList } = this.props
     return (<SafeAreaView style={Styles.fill}>
-      {isLoading ? <View><ActivityIndicator size="large" color="#379aff" /></View> :
+      {isLoading ? <View style={Styles.loaderContainer}><ActivityIndicator size="large" color="#379aff" /></View> :
         <FlatList
           data={moviesList}
           horizontal={true}
           pagingEnabled={true}
           keyExtractor={this.itemKeyExtractor}
-          style={Styles.Styles}
+          style={Styles.fill}
           renderItem={this.renderItem}
-          onMomentumScrollEnd={this.onMomentumScrollEnd}
-          ListEmptyComponent={this.renderEmptyScreen} />}
+          onMomentumScrollEnd={this.onMomentumScrollEnd} />}
     </SafeAreaView>);
     }
 }
