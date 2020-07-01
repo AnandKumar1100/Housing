@@ -1,7 +1,7 @@
-import {put, takeLatest, select, takeEvery } from 'redux-saga/effects';
+import { put, takeLatest, select, takeEvery } from 'redux-saga/effects';
 import {
     FETCH_MOVIES_LIST,
-    FETCH_MOVIES_LIST_SUCCESS, 
+    FETCH_MOVIES_LIST_SUCCESS,
     FETCH_MOVIES_LIST_FAILURE,
     FETCH_CHAR_NAMES,
     FETCH_CHAR_NAMES_SUCCESS,

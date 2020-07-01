@@ -23,7 +23,7 @@ const initialState = {
   allCharactersList: {},
   allPlanetsList: {},
   allStarShipsList: {},
-  activeSlideIndex: 0,
+  activeSlideIndex: 0
 };
 
 const CarousalReducer = (state = initialState, action) => {
@@ -77,6 +77,7 @@ const CarousalReducer = (state = initialState, action) => {
     case FETCH_CHAR_NAMES_FAILURE:
       return {
         ...state,
+        error: action.message
       };
     case FETCH_PLANETS_DETAILS:
       let planetsListForEpisode = {
@@ -109,7 +110,8 @@ const CarousalReducer = (state = initialState, action) => {
       }
     case FETCH_PLANETS_DETAILS_FAILURE:
       return {
-        ...state
+        ...state,
+        error: action.message
       }
     case FETCH_STARS_SHIPS_DETAILS:
       let starsShipsListForEpisode = {
@@ -142,7 +144,8 @@ const CarousalReducer = (state = initialState, action) => {
       }
     case FETCH_STARS_SHIPS_DETAILS_FAILURE:
       return {
-        ...state
+        ...state,
+        error: action.message
       }
     case STORE_CURRENT_SLIDE_INDEX:
       return {

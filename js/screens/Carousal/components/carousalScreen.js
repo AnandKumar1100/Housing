@@ -1,12 +1,11 @@
 'Use Strict';
 
 import React, { Component } from 'react';
-import { View, FlatList, SafeAreaView, ActivityIndicator, Dimensions, Text } from 'react-native'
-import CarousalSlide from './carousalSlide'
+import { View, FlatList, SafeAreaView, ActivityIndicator, Dimensions } from 'react-native'
+import Episodes from './episodes'
 import { Styles } from "./styles";
 
 const windowWidth = Dimensions.get('window').width
-
 export default class CarousalScreen extends Component {
 
   constructor(props) {
@@ -19,7 +18,7 @@ export default class CarousalScreen extends Component {
   }
 
   renderItem = ({ item, index }) => {
-    return (<CarousalSlide movieDetails={item} slideIndex={index}/>);
+    return (<Episodes movieDetails={item} slideIndex={index}/>);
   }
 
   itemKeyExtractor = (item, index) => String(item.episode_id)

@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import CarousalNames from "../components/names";
+import CarousalNames from "../components/propertyNames";
 import { fetchCharDetails, fetchPlanetsDetails, fetchStarShipsDetails } from '../actions';
 
 const mapStateToProps = (state, props) => {

@@ -1,11 +1,11 @@
 'Use Strict';
 
-import React, { PureComponent, Component } from 'react';
+import React, { Component } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native'
 import * as CONSTANTS from './constants'
 import { Styles } from './styles';
 
-export default class CarousalName extends Component {
+export default class PropertyNames extends Component {
 
     constructor(props) {
         super(props)
@@ -52,7 +52,7 @@ export default class CarousalName extends Component {
         const mappedCategory = this.props.type === CONSTANTS.CHARACTERS ? allCharactersList : this.props.type === CONSTANTS.PLANETS ? allPlanetsList : allStarShipsList
         return (
             <View style={Styles.charNameBoxContainer}>
-                {mappedCategory[episodeId] && mappedCategory[episodeId][this.id] ? mappedCategory[episodeId][this.id].isLoading ? <ActivityIndicator size={'small'}/> : < Text style={Styles.charName}>{mappedCategory[episodeId][this.id].name}</Text> : null}
+                {mappedCategory[episodeId] && mappedCategory[episodeId][this.id] ? mappedCategory[episodeId][this.id].isLoading ? <ActivityIndicator size={'small'} /> : < Text style={Styles.charName}>{mappedCategory[episodeId][this.id].name}</Text> : null}
             </View>);
     }
 }
